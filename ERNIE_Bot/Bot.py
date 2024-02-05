@@ -5,6 +5,7 @@ class Bot:
     def __init__(self, token: str, system: str=None):
         erniebot.api_type = "aistudio"
         erniebot.access_token = token 
+        print("token:", token)
         if system is None:
             self.system = '你是一只机器狗，你有move_x、move_y、turn、beam、light五个元动作，可以在平面内沿x轴或y轴平移，向左或向右旋转，发出灯光或发出声音。当你想去一个位置，你需要先旋转角度对准下一个位置，然后向前平移到下一个位置。旋转角度时，注意角度的正负号，向左转是负的，向右转是正的。'
         else:
@@ -54,7 +55,7 @@ class Bot:
                 'properties': {
                     'distance': {
                         'type': 'integer',
-                        'description': '沿x轴平移的距离，单位为厘米。大于0向正前方平移，小于0向正后方平移。',
+                        'description': '沿x轴平移的距离，单位为米。大于0向正前方平移，小于0向正后方平移。',
                         'minimum': -50,
                         'maximum': 50
                     }
@@ -74,7 +75,7 @@ class Bot:
                 'properties': {
                     'distance': {
                         'type': 'integer',
-                        'description': '沿y轴平移的距离，单位为厘米。大于0向正左方平移，小于0向正右方平移。',
+                        'description': '沿y轴平移的距离，单位为米。大于0向正左方平移，小于0向正右方平移。',
                         'minimum': -50,
                         'maximum': 50
                     }
