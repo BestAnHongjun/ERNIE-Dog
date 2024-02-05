@@ -81,8 +81,11 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 安装依赖项
 
 ```sh
+# 进入仓库主目录
 cd ERNIE-Dog
-pip install -r requirements.txt
+
+# 安装依赖项
+python -m pip install -r requirements.txt
 ```
 
 </details>
@@ -99,4 +102,19 @@ git clone https://github.com/unitreerobotics/unitree_legged_sdk.git
 # 与本Demo保持一致版本
 cd unitree_legged_sdk
 git checkout 4539a6c10dfbc9781cea6fcb7d51bc6ddc6f71e1
+
+# 安装编译依赖项
+sudo apt install libmsgpack-dev
+
+# 编译SDK
+mkdir build
+cd build
+cmake -DPYTHON_BUILD=TRUE ..
+cmake .. \
+    -DPYTHON_BUILD=TRUE \
+    -DPYTHON_EXECUTABLE=$(python -c "import sys; print(sys.executable)") \
+    -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")  \
+    -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
+make -j4
+sudo make install
 ```
