@@ -5,7 +5,7 @@ import math
 
 
 class Dog:
-    def __init__(self):
+    def __init__(self, move=True):
         current_directory = os.path.dirname(os.path.abspath(__file__))
         sys.path.append(os.path.join(current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
         print(os.path.join(current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
@@ -16,6 +16,7 @@ class Dog:
         self.udp = sdk.UDP(HIGHLEVEL, 8080, "192.168.123.161", 8082)
         self.cmd = sdk.HighCmd()
         self.state = sdk.HighState()
+        self.move = move
         
         self.udp.InitCmdData(self.cmd)
     
@@ -35,7 +36,13 @@ class Dog:
         # 1m约是2000个motiontime
         motiontime = 0
         unit_move = 2000
-        while True:
+        if distance > 0:
+            direct = 1
+            distance = distance
+        else:
+            direct = -1
+            distance = -distance
+        while self.move:
             time.sleep(0.002)
             motiontime = motiontime + 1
 
@@ -47,7 +54,7 @@ class Dog:
             if motiontime > 0 and motiontime < distance * unit_move:
                 self.cmd.mode = 2
                 self.cmd.gaitType = 1
-                self.cmd.velocity = [0.2, 0] # -1  ~ +1
+                self.cmd.velocity = [0.2 * direct, 0] # -1  ~ +1
             
             if motiontime > distance * unit_move and motiontime < distance * unit_move + 1000:
                 self.cmd.mode = 1
@@ -57,6 +64,46 @@ class Dog:
             
             self.udp.SetSend(self.cmd)
             self.udp.Send()
+
+        feedback = "已沿x轴移动{}m。".format(distance * direct)
+        return feedback
+    
+    def move_y(self, distance):
+        # 1000个motiontime大约是50cm
+        # 1m约是2000个motiontime
+        motiontime = 0
+        unit_move = 2000
+        if distance > 0:
+            direct = 1
+            distance = distance
+        else:
+            direct = -1
+            distance = -distance
+        while self.move:
+            time.sleep(0.002)
+            motiontime = motiontime + 1
+
+            self.udp.Recv()
+            self.udp.GetRecv(self.state)
+
+            self._init_cmd()
+
+            if motiontime > 0 and motiontime < distance * unit_move:
+                self.cmd.mode = 2
+                self.cmd.gaitType = 1
+                self.cmd.velocity = [0, 0.2 * direct] # -1  ~ +1
+            
+            if motiontime > distance * unit_move and motiontime < distance * unit_move + 1000:
+                self.cmd.mode = 1
+
+            if motiontime > distance * unit_move + 1000:
+                break
+            
+            self.udp.SetSend(self.cmd)
+            self.udp.Send()
+        
+        feedback = "已沿y轴移动{}m。".format(distance * direct)
+        return feedback
     
     def turn(self, angle):
         # 500个motiontime大约是90度
@@ -69,7 +116,7 @@ class Dog:
         else:
             direct = -1
             angle = -angle
-        while True:
+        while self.move:
             time.sleep(0.002)
             motiontime = motiontime + 1
 
@@ -92,8 +139,17 @@ class Dog:
             self.udp.SetSend(self.cmd)
             self.udp.Send()
         
-
-
+        feedback = "已旋转{}度。".format(angle * direct)
+        return feedback
+    
+    def beam(self, arg):
+        feedback = "已发出声音。"
+        return feedback
+    
+    def light(self, arg):
+        feedback = "已发出灯光。"
+        return feedback
+        
 
 if __name__ == "__main__":
     dog = Dog()
