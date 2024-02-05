@@ -1,9 +1,21 @@
 # ERNIE-Dog：基于文心一言大模型的机器狗
 
-## Go1-NX环境配置
+## DEMO运行准备
+
+### 1.Go1-Nano1环境配置
 
 <details>
-<summary>1.创建虚拟环境</summary>
+<summary>1.1 下载代码仓库</summary>
+</details>
+
+<details>
+<summary>1.2 下载第三方代码仓库</summary>
+</details>
+
+### 2.Go1-NX环境配置
+
+<details>
+<summary>2.1 创建虚拟环境</summary>
 
 安装Miniconda。
 > **关于为什么一定要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
@@ -63,7 +75,7 @@ conda remove -n <your-env-name> --all # 慎用，不可逆！
 </details>
 
 <details>
-<summary>2.下载代码仓库</summary>
+<summary>2.2 下载代码仓库</summary>
 
 下载Baseline代码仓库
 
@@ -91,7 +103,7 @@ python -m pip install -r requirements-nx.txt
 </details>
 
 <details>
-<summary>3.下载第三方代码仓库</summary>
+<summary>2.3 下载第三方代码仓库</summary>
 
 下载宇树运动SDK
 
@@ -118,3 +130,63 @@ cmake .. \
 make -j4
 sudo make install
 ```
+
+</details>
+
+## 运行DEMO
+
+<details>
+<summary>1.启动Go1-Nano1板卡程序</summary>
+</details>
+
+<detail>
+<summary>2.启动Go1-NX板卡程序</summary>
+</details>
+
+## 开发教程
+
+### 1.让机器狗“看”懂指令 - PaddleOCR
+<details>
+<summary>1.1 在AI Studio平台训练PaddleOCR模型</summary>
+</details>
+
+<details>
+<summary>1.2 导出PaddleOCR模型</summary>
+</details>
+
+<details>
+<summary>1.3 部署PaddleOCR模型至Go1-NX</summary>
+</details>
+
+<details>
+<summary>1.4 UnitreeCamera SDK教程</summary>
+</details>
+
+<details>
+<summary>1.5 UnitreeCamera与PaddleOCR集成</summary>
+</details>
+
+### 2.让机器狗拥有“大脑” - 文心一言大模型
+<details>
+<summary>2.1 ERNIE-Bot SDK教程</summary>
+</details>
+
+<details>
+<summary>2.2 ERNIE-Bot SDK进阶教程</summary>
+</details>
+
+<details>
+<summary>2.3 基于ERNIE-Bot SDK开发Agent</summary>
+</details>
+
+### 3.让机器狗“动”起来
+
+<details>
+<summary>3.1 Unitree Legged SDK教程</summary>
+</details>
+
+<details>
+<summary>3.2 Unitree Legged SDK简易Python封装</summary>
+</details>
+
+### 4.工程集成
