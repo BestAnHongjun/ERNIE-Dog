@@ -209,5 +209,5 @@ sudo make install
 
 #### 合作单位：
 
-![](./attach/work.jpg)
+<img src="./attach/work.jpg" width="500px" >
 
