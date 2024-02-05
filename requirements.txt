@@ -1,1 +1,7 @@
+# 文心一言SDK
 erniebot==0.5.0
+
+# ROS相关
+rospkg
+rospy
+catkin_tools
