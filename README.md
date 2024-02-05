@@ -1,5 +1,9 @@
 # ERNIE-Dog：基于文心一言大模型的机器狗
 
+<div align="center">
+<img src="./attach/logo.jpg" width="500px">
+</div>
+
 ## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
