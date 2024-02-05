@@ -1,6 +1,6 @@
 # ERNIE-Dog：基于文心一言大模型的机器狗
 
-## DEMO运行准备
+## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
 
@@ -133,7 +133,7 @@ sudo make install
 
 </details>
 
-## 运行DEMO
+## 二、运行DEMO
 
 <details>
 <summary>1.启动Go1-Nano1板卡程序</summary>
@@ -143,7 +143,7 @@ sudo make install
 <summary>2.启动Go1-NX板卡程序</summary>
 </details>
 
-## 开发教程
+## 三、开发教程
 
 ### 1.让机器狗“看”懂指令 - PaddleOCR
 <details>
