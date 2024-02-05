@@ -1,45 +1,26 @@
+import os
 import json
 from ERNIE_Bot import Bot
+from Go1_Bot.Sport import Dog
 
 
-def move_x(distance):
-    feedback = "已沿x轴移动{}m。".format(distance)
-    print(feedback)
-    return feedback
+# 初始化文心一言大模型
+token = os.getenv('ERNIE_BOT_TOKEN')
+bot = Bot(token)
 
-def move_y(distance):
-    feedback = "已沿y轴移动{}m。".format(distance)
-    print(feedback)
-    return feedback
-
-def turn(angle):
-    feedback = "已旋转{}度。".format(angle)
-    print(feedback)
-    return feedback
-
-def light(arg):
-    feedback = "已发出灯光。"
-    print(feedback)
-    return feedback
-
-def beam(arg):
-    feedback = "已发出声音。"
-    print(feedback)
-    return feedback
-
+# 初始化Go1机器狗
+dog = Dog(move=False)
 name2func = {
-    "move_x": move_x,
-    "move_y": move_y,
-    "turn": turn,
-    "light": light,
-    "beam": beam
+    "move_x": dog.move_x,
+    "move_y": dog.move_y,
+    "turn": dog.turn,
+    "light": dog.light,
+    "beam": dog.beam
 }
 
 if __name__ == "__main__":
-    token = ''
-    command = '以初始位置为参考，你左前方30度方向、距离10m有一个红色的小球；右前方30度方向、距离3m有一个蓝色的小球；你正前方8m，有一个绿色的小球。请先走到蓝色的小球前面，叫一声，然后发出灯光。'
+    command = '以初始位置为参考，你左前方30度方向、距离3m有一个红色的小球；右前方30度方向、距离1m有一个蓝色的小球；你正前方2m，有一个绿色的小球。请先走到蓝色的小球前面，叫一声，然后发出灯光。'
 
-    bot = Bot(token)
     while True:
         ret, action = bot.get_actions(command)
         print(action)
@@ -49,5 +30,6 @@ if __name__ == "__main__":
         func_call = name2func[action['name']]
         func_args = json.loads(action["arguments"])
         func_res = func_call(**func_args)
+        print(" >>> 反馈：", func_res)
         
         command = func_res    
