@@ -181,10 +181,16 @@ sudo make install
 ### 2.让机器狗拥有“大脑” - 文心一言大模型
 <details>
 <summary>2.1 ERNIE-Bot SDK教程</summary>
+
+[点此查看ERNIE-Bot SDK教程](https://aistudio.baidu.com/projectdetail/6779542)
+
 </details>
 
 <details>
 <summary>2.2 ERNIE-Bot SDK进阶教程</summary>
+
+[点此查看ERNIE-Bot SDK进阶教程](https://aistudio.baidu.com/projectdetail/6779597)
+
 </details>
 
 <details>
@@ -195,6 +201,11 @@ sudo make install
 
 <details>
 <summary>3.1 Unitree Legged SDK教程</summary>
+
+[SDK文档教程](https://www.yuque.com/ironfatty/nly1un/wyt5qo)
+
+[SDK视频教程](https://www.yuque.com/ironfatty/nly1un/su8o89)
+
 </details>
 
 <details>
@@ -205,7 +216,7 @@ sudo make install
 
 ## 开发单位
 #### 开发者：
-> <big>安泓郡(Coder.AN)</big>： 西北工业大学光电与智能研究院，博士生，https://www.anhongjun.top
+> <big>安泓郡(Coder.AN)</big>： 西北工业大学光电与智能研究院，博士生，https://www.anhongjun.top/about.php
 
 #### 合作单位：
 
