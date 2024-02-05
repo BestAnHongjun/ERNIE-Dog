@@ -117,6 +117,9 @@ python -m pip install -r requirements-nx.txt
 下载宇树运动SDK
 
 ```sh
+# 进入项目主目录
+cd ~/ERNIE-Dog
+
 # 由GitHub拉取仓库
 git clone https://github.com/unitreerobotics/unitree_legged_sdk.git
 
