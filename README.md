@@ -1,7 +1,7 @@
 # ERNIE-Dog：基于文心一言大模型的机器狗
 
 <div align="center">
-<img src="./attach/logo.jpg" width="500px">
+<img src="./attach/logo.jpg" width="700px">
 </div>
 
 ## 一、DEMO运行准备
