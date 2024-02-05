@@ -4,6 +4,11 @@
 <img src="./attach/logo.jpg" width="700px">
 </div>
 
+第十三届“中国软件杯”大学生软件设计大赛百度飞桨赛题官方Baseline。
+
+> GitHub仓库地址：https://github.com/BestAnHongjun/ERNIE-Dog \
+> Gitee仓库地址：https://gitee.com/an_hongjun/ERNIE-Dog
+
 ## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
@@ -194,3 +199,15 @@ sudo make install
 </details>
 
 ### 4.工程集成
+
+## 开发单位
+#### 开发者：
+> <big>安泓郡(Coder.AN)</big> \
+> 西北工业大学光电与智能研究院 \
+> Email: an.hongjun@foxmail.com \
+> Page: https://www.anhongjun.top
+
+#### 合作单位：
+
+![](./attach/work.jpg)
+
