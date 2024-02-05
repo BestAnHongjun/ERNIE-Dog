@@ -202,10 +202,7 @@ sudo make install
 
 ## 开发单位
 #### 开发者：
-> <big>安泓郡(Coder.AN)</big> \
-> 西北工业大学光电与智能研究院 \
-> Email: an.hongjun@foxmail.com \
-> Page: https://www.anhongjun.top
+> <big>安泓郡(Coder.AN)</big>： 西北工业大学光电与智能研究院，博士生，https://www.anhongjun.top
 
 #### 合作单位：
 
