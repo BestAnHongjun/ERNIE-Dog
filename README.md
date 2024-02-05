@@ -139,7 +139,7 @@ sudo make install
 <summary>1.启动Go1-Nano1板卡程序</summary>
 </details>
 
-<detail>
+<details>
 <summary>2.启动Go1-NX板卡程序</summary>
 </details>
 
