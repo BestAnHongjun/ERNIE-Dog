@@ -2,7 +2,8 @@
 
 ## Go1-NX环境配置
 
-### 1.创建虚拟环境
+<details>
+<summary>1.创建虚拟环境</summary>
 
 安装Miniconda。
 > **关于为什么一定要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
@@ -59,7 +60,12 @@ conda deactivate
 conda remove -n <your-env-name> --all # 慎用，不可逆！
 ```
 
-### 2.下载仓库
+</details>
+
+<details>
+<summary>2.下载代码仓库</summary>
+
+下载Baseline代码仓库
 
 ```sh
 # 下载到Home目录
@@ -72,14 +78,19 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 # git clone https://gitee.com/an_hongjun/ERNIE-Dog.git
 ```
 
-### 3.安装依赖项
+安装依赖项
 
 ```sh
 cd ERNIE-Dog
 pip install -r requirements.txt
 ```
 
-### 1.下载宇树运动SDK
+</details>
+
+<details>
+<summary>3.下载第三方代码仓库</summary>
+
+下载宇树运动SDK
 
 ```sh
 # 由GitHub拉取仓库
