@@ -11,20 +11,10 @@
 
 ## 一、DEMO运行准备
 
-### 1.Go1-Nano1环境配置
+### 1.创建虚拟环境
 
 <details>
-<summary>1.1 下载代码仓库</summary>
-</details>
-
-<details>
-<summary>1.2 下载第三方代码仓库</summary>
-</details>
-
-### 2.Go1-NX环境配置
-
-<details>
-<summary>2.1 创建虚拟环境</summary>
+<summary>1.1 在Go1-NX板卡上创建conda环境</summary>
 
 安装Miniconda。
 > **关于为什么一定要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
@@ -84,7 +74,26 @@ conda remove -n <your-env-name> --all # 慎用，不可逆！
 </details>
 
 <details>
-<summary>2.2 下载代码仓库</summary>
+<summary>1.2 在Go1-Nano1板卡上创建conda环境</summary>
+
+方法同`1.1 在Go1-NX板卡上创建conda环境`。
+
+</details>
+
+### 2.Go1-Nano1环境配置
+
+<details>
+<summary>2.1 下载代码仓库</summary>
+</details>
+
+<details>
+<summary>2.2 下载第三方代码仓库</summary>
+</details>
+
+### 3.Go1-NX环境配置
+
+<details>
+<summary>3.1 下载代码仓库</summary>
 
 下载Baseline代码仓库
 
@@ -112,35 +121,26 @@ python -m pip install -r requirements-nx.txt
 </details>
 
 <details>
-<summary>2.3 下载第三方代码仓库</summary>
+<summary>3.3 编译安装Unitree相关SDK</summary>
 
-下载宇树运动SDK
+编译安装宇树运动SDK
 
 ```sh
 # 进入项目主目录
 cd ~/ERNIE-Dog
 
-# 由GitHub拉取仓库
-git clone https://github.com/unitreerobotics/unitree_legged_sdk.git
+# 执行一键编译安装脚本
+./Go1_Bot/build_legged_sdk.sh
+```
 
-# 与本Demo保持一致版本
-cd unitree_legged_sdk
-git checkout 4539a6c10dfbc9781cea6fcb7d51bc6ddc6f71e1
+编译安装宇树灯带SDK
 
-# 安装编译依赖项
-sudo apt install libmsgpack-dev
+```sh
+# 进入项目主目录
+cd ~/ERNIE-Dog
 
-# 编译SDK
-mkdir build
-cd build
-cmake -DPYTHON_BUILD=TRUE ..
-cmake .. \
-    -DPYTHON_BUILD=TRUE \
-    -DPYTHON_EXECUTABLE=$(python -c "import sys; print(sys.executable)") \
-    -DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())")  \
-    -DPYTHON_LIBRARY=$(python -c "import distutils.sysconfig as sysconfig; print(sysconfig.get_config_var('LIBDIR'))")
-make -j4
-sudo make install
+# 执行一键编译安装脚本
+./Go1_Bot/build_light_sdk.sh
 ```
 
 </details>
