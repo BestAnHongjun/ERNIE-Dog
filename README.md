@@ -200,7 +200,7 @@ cd ~/ERNIE-Dog
 
 </details>
 
-### 3.让机器狗“动”起来
+### 3.让机器狗“动”起来 - UnitreeSDK
 
 <details>
 <summary>3.1 如何让狗子的灯带发光</summary>
