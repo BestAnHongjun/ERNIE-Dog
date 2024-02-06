@@ -96,7 +96,7 @@ class Bot:
                 'properties': {
                     'angle': {
                         'type': 'integer',
-                        'description': '旋转的角度，单位为度。大于0向左转，小于0向右转。',
+                        'description': '旋转的角度，单位为度。大于0向右转，小于0向左转。',
                         'minimum': -90,
                         'maximum': 90
                     }
@@ -139,3 +139,26 @@ class Bot:
             }
         }
         return desc
+
+
+if __name__ == "__main__":
+    # for test
+    import os
+    token = os.getenv('ERNIE_BOT_TOKEN') # 通过环境变量方式获取token
+    bot = Bot(token)
+
+    command = '以初始位置为参考，你左前方30度方向、距离3m有一个红色的小球；右前方30度方向、距离1m有一个蓝色的小球；你正前方2m，有一个绿色的小球。请先走到蓝色的小球前面，叫一声，然后发出灯光。'
+    print(" >>> 用户指令：", command, "\n")
+
+    while True:
+        ret, action = bot.get_actions(command)
+        if ret:
+            print(" <<< 文心大模型：", action["thoughts"])
+            print("   - 调用方法：", action["name"])
+            print("   - 调用参数：", action["arguments"])
+        else:
+            print(" <<< 文心大模型：", action)
+            break
+        
+        command = "已完成以上动作"
+        print(" >>> 反馈：", command, "\n")
