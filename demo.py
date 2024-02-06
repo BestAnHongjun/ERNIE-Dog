@@ -1,7 +1,7 @@
 import os
 import json
 from ERNIE_Bot import Bot
-from Go1_Bot.Sport import Dog
+from Go1_Bot.Dog import Dog
 
 
 # 初始化文心一言大模型
