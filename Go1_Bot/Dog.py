@@ -6,8 +6,8 @@ import math
 
 class Dog:
     def __init__(self, move=True):
-        current_directory = os.path.dirname(os.path.abspath(__file__))
-        sys.path.append(os.path.join(current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
+        self.current_directory = os.path.dirname(os.path.abspath(__file__))
+        sys.path.append(os.path.join(self.current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
         import robot_interface as sdk
 
         HIGHLEVEL = 0xee
@@ -151,7 +151,8 @@ class Dog:
         return feedback
     
     def light(self, arg):
-        # 该函数交给读者去完成
         # 参考链接：https://www.yuque.com/ironfatty/nly1un/cmls8h
+        client_path = os.path.join(self.current_directory, "FaceLightSDK", "bin", "faceLightClient")
+        os.system(client_path)
         feedback = "已发出灯光。"
         return feedback
