@@ -7,7 +7,7 @@ import math
 class Dog:
     def __init__(self, move=True):
         self.current_directory = os.path.dirname(os.path.abspath(__file__))
-        sys.path.append(os.path.join(self.current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
+        sys.path.append(os.path.join(self.current_directory, "LeggedSDK", "lib", "python", "arm64"))
         import robot_interface as sdk
 
         HIGHLEVEL = 0xee
