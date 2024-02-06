@@ -27,7 +27,7 @@ pip install erniebot==0.5.0
 
 `move_x`函数，含有一个参数`distance`，表示沿x轴平移的距离，单位为米。大于0向正前方平移，小于0向正后方平移。
 
-```json
+```py
 def move_x_desc():
     desc = {
         'name': 'move_x',
@@ -52,7 +52,7 @@ def move_x_desc():
 
 `move_y`函数，含有一个参数`distance`，表示沿y轴平移的距离，单位为米。大于0向正左方平移，小于0向正右方平移。
 
-```json
+```py
 def move_y_desc():
     desc = {
         'name': 'move_y',
@@ -77,7 +77,7 @@ def move_y_desc():
 
 `turn`函数，含有一个参数`angle`，表示旋转的角度，单位为度。大于0向右旋转，小于0向左旋转。
 
-```json
+```py
 def turn_desc():
     desc = {
         'name': 'turn',
@@ -102,7 +102,7 @@ def turn_desc():
 
 `beam`函数，用于让狗子发出声音。理论来说，该函数不需要接受参数，但是文心一言不允许参数列表为空的函数描述，因此我们用一个`integer`类型的参数`arg`占位，并告诉模型该参数恒赋予0值。
 
-```json
+```py
 def beam_desc():
     desc = {
         'name': 'beam',
@@ -124,7 +124,7 @@ def beam_desc():
 
 `light`函数，用于让狗子发出灯光。该函数也不需要参数，用一个arg占位。
 
-```json
+```py
 def light_desc():
     desc = {
         'name': 'light',
