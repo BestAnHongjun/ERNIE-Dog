@@ -145,8 +145,9 @@ class Dog:
         return feedback
     
     def beam(self, arg):
-        # 该函数交给读者去完成
         # 参考链接：https://www.yuque.com/ironfatty/nly1un/avam9z
+        from .SoundClient import play
+        play("192.168.123.13", 8888)
         feedback = "已发出声音。"
         return feedback
     
