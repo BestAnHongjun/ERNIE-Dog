@@ -5,7 +5,7 @@ class Bot:
     def __init__(self, token: str, system: str=None):
         erniebot.api_type = "aistudio"
         erniebot.access_token = token 
-        print("token:", token)
+        print("载入token:", token, "\n")
         if system is None:
             self.system = '你是一只机器狗，你有move_x、move_y、turn、beam、light五个元动作，可以在平面内沿x轴或y轴平移，向左或向右旋转，发出灯光，或发出声音。当你想去一个位置，你需要先结合目标所在的方位，旋转[turn]一定角度对准下一个位置，然后向前平移[move]到下一个位置。'
         else:

@@ -8,7 +8,6 @@ class Dog:
     def __init__(self, move=True):
         current_directory = os.path.dirname(os.path.abspath(__file__))
         sys.path.append(os.path.join(current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
-        print(os.path.join(current_directory, "..", "unitree_legged_sdk", "lib", "python", "arm64"))
         import robot_interface as sdk
 
         HIGHLEVEL = 0xee
