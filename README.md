@@ -11,13 +11,23 @@
 
 ## 一、DEMO运行准备
 
-### 1.创建虚拟环境
+### 1.Go1-Nano1环境配置
 
 <details>
-<summary>1.1 在Go1-NX板卡上创建conda环境</summary>
+<summary>1.1 下载代码仓库</summary>
+</details>
+
+<details>
+<summary>1.2 下载第三方代码仓库</summary>
+</details>
+
+### 2.Go1-NX环境配置
+
+<details>
+<summary>2.1 在Go1-NX板卡上创建conda环境</summary>
 
 安装Miniconda。
-> **关于为什么一定要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
+> **关于为什么要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
 
 ```sh
 # 创建文件夹
@@ -31,6 +41,9 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O ~
 ```sh
 sudo ntpdate ntp.aliyun.com
 ```
+**记得每次开机都执行上述命令同步时间**。当你遇到不限于以下问题时，都有可能是时间问题导致的：
+* 通过wget、git、curl等下载文件失败，通常涉及https协议握手；
+* CMake编译失败。表现为命令行中好像已经编译完成了，但实际上没有更新二进制文件。因为CMake会比较缓存中的二进制文件和新生成的二进制文件的时间，如果编译目录中存在一个“未来“的文件，它会认为你已经编译成功了。
 
 ```sh
 # 安装Miniconda
@@ -74,26 +87,7 @@ conda remove -n <your-env-name> --all # 慎用，不可逆！
 </details>
 
 <details>
-<summary>1.2 在Go1-Nano1板卡上创建conda环境</summary>
-
-方法同`1.1 在Go1-NX板卡上创建conda环境`。
-
-</details>
-
-### 2.Go1-Nano1环境配置
-
-<details>
-<summary>2.1 下载代码仓库</summary>
-</details>
-
-<details>
-<summary>2.2 下载第三方代码仓库</summary>
-</details>
-
-### 3.Go1-NX环境配置
-
-<details>
-<summary>3.1 下载代码仓库</summary>
+<summary>2.2 下载代码仓库</summary>
 
 下载Baseline代码仓库
 
@@ -109,6 +103,7 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 ```
 
 安装依赖项
+* 注意确保你已经进入`conda`虚拟环境。
 
 ```sh
 # 进入仓库主目录
@@ -121,7 +116,7 @@ python -m pip install -r requirements-nx.txt
 </details>
 
 <details>
-<summary>3.3 编译安装Unitree相关SDK</summary>
+<summary>2.3 编译安装Unitree相关SDK</summary>
 
 编译安装宇树运动SDK
 
@@ -195,6 +190,9 @@ cd ~/ERNIE-Dog
 
 <details>
 <summary>2.3 基于ERNIE-Bot SDK开发Agent</summary>
+
+[点此查看ERNIE-Bot SDK开发Agent](./doc/chapter2.3.md)
+
 </details>
 
 ### 3.让机器狗“动”起来
