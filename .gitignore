@@ -2,5 +2,3 @@ __pycache__
 .DS_Store
 .vscode
 .idea
-
-unitree_legged_sdk
