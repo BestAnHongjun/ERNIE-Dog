@@ -39,9 +39,11 @@ class Dog:
         if distance > 0:
             direct = 1
             distance = distance
+            feedback = "已沿x轴向前移动{}m。".format(distance)
         else:
             direct = -1
             distance = -distance
+            feedback = "已沿x轴向后移动{}m。".format(distance)
         while self.move:
             time.sleep(0.002)
             motiontime = motiontime + 1
@@ -65,7 +67,6 @@ class Dog:
             self.udp.SetSend(self.cmd)
             self.udp.Send()
 
-        feedback = "已沿x轴移动{}m。".format(distance * direct)
         return feedback
     
     def move_y(self, distance):
@@ -76,9 +77,11 @@ class Dog:
         if distance > 0:
             direct = 1
             distance = distance
+            feedback = "已沿y轴向前移动{}m。".format(distance)
         else:
             direct = -1
             distance = -distance
+            feedback = "已沿y轴向后移动{}m。".format(distance)
         while self.move:
             time.sleep(0.002)
             motiontime = motiontime + 1
@@ -102,7 +105,6 @@ class Dog:
             self.udp.SetSend(self.cmd)
             self.udp.Send()
         
-        feedback = "已沿y轴移动{}m。".format(distance * direct)
         return feedback
     
     def turn(self, angle):
@@ -111,11 +113,13 @@ class Dog:
         motiontime = 0
         unit_angle = 500 / 90
         if angle > 0:
-            direct = 1
-            angle = angle
-        else:
             direct = -1
+            angle = angle
+            feedback = "已向右旋转{}度。".format(angle)
+        else:
+            direct = 1
             angle = -angle
+            feedback = "已向左旋转{}度。".format(angle)
         while self.move:
             time.sleep(0.002)
             motiontime = motiontime + 1
@@ -139,7 +143,6 @@ class Dog:
             self.udp.SetSend(self.cmd)
             self.udp.Send()
         
-        feedback = "已旋转{}度。".format(angle * direct)
         return feedback
     
     def beam(self, arg):
@@ -153,8 +156,3 @@ class Dog:
         # 参考链接：https://www.yuque.com/ironfatty/nly1un/cmls8h
         feedback = "已发出灯光。"
         return feedback
-        
-
-if __name__ == "__main__":
-    dog = Dog()
-    dog.move_x(1)
