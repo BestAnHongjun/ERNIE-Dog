@@ -128,4 +128,4 @@ def move_x(self, distance):
     return feedback
 ```
 
-其他的元动作的视线也是相似的，教程就不说废话了，佬们自己去看[Dog.py](../Go1_Bot/Dog.py)吧~
+其他的元动作的实现也是相似的，教程就不说废话了，佬们自己去看[Dog.py](../Go1_Bot/Dog.py)吧~
