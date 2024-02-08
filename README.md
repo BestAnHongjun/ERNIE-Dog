@@ -264,97 +264,32 @@ python3 tools/infer/predict_system.py \
 ## 三、开发教程
 
 ### 1.让机器狗“看”懂指令 - PaddleOCR
-<details>
-<summary>1.1 在AI Studio平台训练PaddleOCR模型(编写中)</summary>
-</details>
 
-<details>
-<summary>1.2 导出PaddleOCR模型(编写中)</summary>
-</details>
+[1.1 UnitreeCamera SDK教程(编写中)](#)
 
-<details>
-<summary>1.3 部署PaddleOCR模型至Go1-NX(编写中)</summary>
-</details>
-
-<details>
-<summary>1.4 UnitreeCamera SDK教程(编写中)</summary>
-</details>
-
-<details>
-<summary>1.5 UnitreeCamera与PaddleOCR集成(编写中)</summary>
-</details>
+[1.2 UnitreeCamera与PaddleOCR集成(编写中)](#)
 
 ### 2.让机器狗拥有“大脑” - 文心一言大模型
-<details>
-<summary>2.1 ERNIE-Bot SDK教程</summary>
 
-查看如下官方教程：
+[2.1 ERNIE-Bot SDK教程](https://aistudio.baidu.com/projectdetail/6779542)
 
-[点此查看ERNIE-Bot SDK教程](https://aistudio.baidu.com/projectdetail/6779542)
+[2.2 ERNIE-Bot SDK进阶教程](https://aistudio.baidu.com/projectdetail/6779597)
 
-</details>
-
-<details>
-
-查看如下官方教程：
-
-<summary>2.2 ERNIE-Bot SDK进阶教程</summary>
-
-[点此查看ERNIE-Bot SDK进阶教程](https://aistudio.baidu.com/projectdetail/6779597)
-
-</details>
-
-<details>
-<summary>2.3 基于ERNIE-Bot SDK开发Agent</summary>
-
-[点此查看ERNIE-Bot SDK开发Agent](./doc/chapter2.3.md)
-
-</details>
+[2.3 基于ERNIE-Bot SDK开发Agent](./doc/chapter2.3.md)
 
 ### 3.让机器狗“动”起来 - UnitreeSDK
 
-<details>
-<summary>3.1 如何让狗子的灯带发光</summary>
+[3.1 如何让狗子的灯带发光](./doc/chapter3.1.md)
 
-请首先查看`Unitree-Face-Light-SDK`官方教程，了解相关基础操作。
+[3.2 如何调用狗子的扬声器](./doc/chapter3.2.md)
 
-[文档教程-Go1头部LED灯条的开发使用](https://www.yuque.com/ironfatty/nly1un/cmls8h)
-
-查看完官方教程后，请查看：
-
-[如何让狗子的灯带发光](./doc/chapter3.1.md)
-
-</details>
-
-<details>
-<summary>3.2 如何调用狗子的扬声器</summary>
-
-请首先查看官方教程，了解相关基础操作。
-
-[文档教程-Go1头部喇叭播放音频](https://www.yuque.com/ironfatty/nly1un/avam9z)
-
-查看完官方教程后，请查看：
-
-[如何调用狗子的扬声器](./doc/chapter3.2.md)
-
-</details>
-
-<details>
-<summary>3.3 控制狗子运动</summary>
-
-请首先查看`Unitree-Legged-SDK`官方教程，了解相关基础操作。
-
-[SDK文档教程](https://www.yuque.com/ironfatty/nly1un/wyt5qo)
-
-[SDK视频教程](https://www.yuque.com/ironfatty/nly1un/su8o89)
-
-查看完官方教程后，请查看：
-
-[控制狗子运动教程](./doc/chapter3.3.md)
-
-</details>
+[3.3 控制狗子运动](./doc/chapter3.3.md)
 
 ### 4.工程集成
+
+[4.1 文心大模型与UnitreeSDK集成(编写中)](#)
+
+[4.2 PaddleOCR-文心-UnitreeSDK全链路集成(编写中)](#)
 
 ## 开发单位
 #### 开发者：
