@@ -140,7 +140,7 @@ cd ~/ERNIE-Dog
 
 </details>
 
-### 3.Go1-NX(Go1-Nano3)环境配置
+### 3.Go1-Nano3(Go1-NX)环境配置
 
 <details>
 <summary>3.1 安装PaddlePaddle-GPU</summary>
@@ -235,6 +235,8 @@ tar xf ch_PP-OCRv3_det_infer.tar
 tar xf ch_PP-OCRv3_rec_infer.tar
 ```
 
+运行demo测试：
+
 ```sh
 python3 tools/infer/predict_system.py \
     --det_model_dir=./pretrain_models/ch_PP-OCRv3_det_infer/ \
@@ -243,6 +245,8 @@ python3 tools/infer/predict_system.py \
     --use_gpu=True \
     --rec_image_shape="3,48,320"
 ```
+
+运行结果将保存于`./inference_results`文件夹下。
 
 </details>
 

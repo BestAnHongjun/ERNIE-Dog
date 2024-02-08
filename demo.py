@@ -9,7 +9,7 @@ token = os.getenv('ERNIE_BOT_TOKEN')
 bot = Bot(token)
 
 # 初始化Go1机器狗
-dog = Dog(move=False)
+dog = Dog(move=True)
 name2func = {
     "move_x": dog.move_x,
     "move_y": dog.move_y,
