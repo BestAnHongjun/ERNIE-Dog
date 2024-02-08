@@ -21,13 +21,13 @@
 <summary>1.2 编译安装Unitree相关SDK(编写中)</summary>
 </details>
 
-### 2.Go1-NX环境配置
+### 2.Go1-Nano2环境配置
 
 <details>
-<summary>2.1 在Go1-NX板卡上创建conda环境</summary>
+<summary>2.1 在Go1-Nano2板卡上创建conda环境</summary>
 
 安装Miniconda。
-> **关于为什么要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-NX`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
+> **关于为什么要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-Nano2`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
 
 ```sh
 # 创建文件夹
@@ -139,6 +139,113 @@ cd ~/ERNIE-Dog
 ```
 
 </details>
+
+### 3.Go1-NX(Go1-Nano3)环境配置
+
+<details>
+<summary>3.1 安装PaddlePaddle-GPU</summary>
+
+下载PaddlePaddle-GPU安装包。
+
+**注意**：该Python包是针对JetPack4.5定制的，小白请勿在`conda`环境中使用。大佬自行使用骚操作解决。
+
+```sh
+# 进入下载目录
+cd ~/Downloads
+
+# NX版执行如下命令
+wget https://paddle-inference-lib.bj.bcebos.com/2.3.2/python/Jetson/jetpack4.5_gcc7.5/xavier/paddlepaddle_gpu-2.3.2-cp36-cp36m-linux_aarch64.whl
+# Nano版执行如下命令
+wget https://paddle-inference-lib.bj.bcebos.com/2.3.2/python/Jetson/jetpack4.5_gcc7.5/nano/paddlepaddle_gpu-2.3.2-cp36-cp36m-linux_aarch64.whl
+```
+
+安装PaddlePaddle-GPU。
+```sh
+pip3 install paddlepaddle_gpu-2.3.2-cp36-cp36m-linux_aarch64.whl
+```
+
+使用vim编辑`~/.bashrc`:
+
+```sh
+vim ~/.bashrc
+```
+
+在最后一行添加：
+```sh
+export OPENBLAS_CORETYPE=ARMV8
+```
+
+激活环境变量：
+
+```sh
+source ~/.bashrc
+```
+
+</details>
+
+<details>
+<summary>3.2 安装PaddleOCR</summary>
+
+下载PaddleOCR代码仓库。
+
+```sh
+cd ~
+git clone https://github.com/PaddlePaddle/PaddleOCR
+```
+
+切换分支。
+
+```sh
+cd ~/PaddleOCR
+git checkout release/2.6
+```
+
+注意执行`git checkout release/2.6`切换到2.6版本分支。在2.7+版本中，`requirements.txt`中的一项`Pillow>=10.0.0`，`Python3.6`无法支持……
+
+编辑`requirements.txt`，将最后一行`PyMuPDF`注释掉，同时添加一行新的`python-bidi`。
+
+```sh
+# PyMuPDF<1.21.0
+python-bidi
+```
+
+安装依赖项。
+
+```sh
+pip3 install -r requirements.txt
+```
+
+`pip3 install`这一步耗时比较长，请将狗子充满电进行，或外接电源。
+
+</details>
+
+<details>
+<summary>3.3 下载预训练模型</summary>
+
+下载并解压PPOCRv3模型
+
+```sh
+cd ~/PaddleOCR
+mkdir pretrain_models
+cd pretrain_models
+
+wget https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar
+wget https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_rec_infer.tar
+tar xf ch_PP-OCRv3_det_infer.tar
+tar xf ch_PP-OCRv3_rec_infer.tar
+```
+
+```sh
+python3 tools/infer/predict_system.py \
+    --det_model_dir=./pretrain_models/ch_PP-OCRv3_det_infer/ \
+    --rec_model_dir=./pretrain_models/ch_PP-OCRv3_rec_infer/ \
+    --image_dir=./doc/imgs/ \
+    --use_gpu=True \
+    --rec_image_shape="3,48,320"
+```
+
+</details>
+
 
 ## 二、运行DEMO
 
