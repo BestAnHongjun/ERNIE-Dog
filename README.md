@@ -9,6 +9,12 @@
 > GitHub仓库地址：https://github.com/BestAnHongjun/ERNIE-Dog \
 > Gitee仓库地址：https://gitee.com/an_hongjun/ERNIE-Dog
 
+Baseline整体架构：
+
+<div align="center">
+<img src="./attach/framework.jpg" width="800px">
+</div>
+
 ## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
