@@ -4,7 +4,7 @@
 
 相信通过阅读`ERNIE-Bot SDK`的[基础教程](https://aistudio.baidu.com/projectdetail/6779542)和[进阶教程](https://aistudio.baidu.com/projectdetail/6779597)之后，你已经对SDK的使用方法有了比较初步的了解。本章节将基于`SDK`的函数调用(Function Calling)功能开发一个简易的Agent，充当机器狗“大脑”，让他能够理解人类的自然语言指令，并自主进行任务规划，以达到相应目的。
 
-本章节，你可以在本地环境 or Go1-NX板卡上进行。如果你是在Go1-NX板卡上开发本章节，请先参考`DEMO运行准备-2.Go1-NX环境配置`配置好板卡环境。
+本章节，你可以在本地环境 or Go1-Nano2板卡上进行。如果你是在Go1-Nano2板卡上开发本章节，请先参考`DEMO运行准备-2.Go1-Nano2环境配置`配置好板卡环境。
 
 如果你是在本机开发本章节，请在本地`Python`环境中安装`erniebot`包，要求`Python`解释器版本在3.8以上，执行如下命令安装：
 

@@ -1,6 +1,6 @@
 # 3.3 控制狗子运动
 
-阅读本教程之前请先阅读[官方文档教程](https://www.yuque.com/ironfatty/nly1un/kv5s7k)和[官方视频教程](https://www.yuque.com/ironfatty/nly1un/su8o89)，了解相关基础知识。
+阅读本教程之前请先阅读[官方文档教程-Go1 SDK HighLevel Interfaces](https://www.yuque.com/ironfatty/nly1un/kv5s7k)和[官方视频教程-使用unitree_legged_sdk控制宇树机器人](https://www.yuque.com/ironfatty/nly1un/su8o89)，了解相关基础知识。
 
 Go1运动的官方开发SDK位于狗子树莓派板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/LeggedSDK`目录下，基本没有做什么修改。
 

@@ -24,6 +24,14 @@ Baseline整体架构：
 <details>
 <summary>1.1 下载代码仓库</summary>
 
+连接进入Go1-Nano1板卡。
+
+```sh
+ssh unitree@192.168.123.13
+```
+
+下载代码仓库。
+
 ```sh
 # 下载到home目录
 cd ~
@@ -46,7 +54,7 @@ sudo ntpdate ntp.aliyun.com
 </details>
 
 <details>
-<summary>1.2 编译安装PicSocket图传</summary>
+<summary>1.2 编译安装PicSocket图传(C/C++版)</summary>
 
 下载PicSocket代码仓库。
 
@@ -102,6 +110,12 @@ cd ~/ERNIE-Dog
 
 <details>
 <summary>2.1 在Go1-Nano2板卡上创建conda环境</summary>
+
+连接Go1-Nano2板卡。
+
+```sh
+ssh unitree@192.168.123.14
+```
 
 安装Miniforge。
 > **关于为什么要装`Miniforge`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-Nano2`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`conda`环境。 \
@@ -216,6 +230,12 @@ cd ~/ERNIE-Dog
 
 <details>
 <summary>3.1 安装PaddlePaddle-GPU</summary>
+
+进入Go1-Nano3(Go1-NX)板卡。
+
+```sh
+ssh unitree@192.168.123.15
+```
 
 下载PaddlePaddle-GPU安装包。
 
@@ -455,6 +475,8 @@ sudo ntpdate ntp.aliyun.com
 export ERNIE_BOT_TOKEN=<your-token>
 ```
 
+注意将<your-token>替换成你的文心一言大模型的token，[参考此文](https://ai.baidu.com/ai-doc/AISTUDIO/slmkadt9z)。
+
 运行ERNIE-Bot程序。
 
 ```sh
@@ -492,9 +514,9 @@ python3 demo_nano3_nx.py
 
 ### 1.让机器狗“看”懂指令 - PaddleOCR
 
-[1.1 UnitreeCamera SDK教程(编写中)](#)
+[1.1 UnitreeCamera SDK教程](./doc/chapter1.1.md)
 
-[1.2 UnitreeCamera与PaddleOCR集成(编写中)](#)
+[1.2 UnitreeCamera与PaddleOCR集成](./doc/chapter1.2.md)
 
 ### 2.让机器狗拥有“大脑” - 文心一言大模型
 

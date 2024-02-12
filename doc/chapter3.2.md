@@ -1,6 +1,6 @@
 # 3.2 如何调用狗子的扬声器
 
-阅读本教程之前请先阅读[官方教程](https://www.yuque.com/ironfatty/nly1un/avam9z)，了解相关基础知识。
+阅读本教程之前请先阅读[官方教程-Go1头部喇叭播放音频](https://www.yuque.com/ironfatty/nly1un/avam9z)，了解相关基础知识。
 
 调用狗子扬声器的思路跟调用灯带的思路很像，都是通过`python`的`os.system()`函数直接执行相关指令，控制扬声器播放特定的wav文件。
 
@@ -19,7 +19,7 @@ os.system("ps -aux | grep wsaudio | awk '{print $2}' | xargs kill -9")
 os.system("aplay -D plughw:2,0 cat.wav")
 ```
 
-但是我们遇到一个问题，扬声器是连接在Nano1板卡上的，所以我们只能在Nano1板卡上通过调用`os.system()`去播放音频。但是我们的主控程序是运行在NX板卡上的，如何在NX上控制Nano1播放音频呢？
+但是我们遇到一个问题，扬声器是连接在Nano1板卡上的，所以我们只能在Nano1板卡上通过调用`os.system()`去播放音频。但是我们的调用端程序是运行在Nano2板卡上的，如何在Nano2上控制Nano1播放音频呢？
 
 看来我们需要自己手写一个UDP通信程序了[手动狗头]，关于UDP通信的具体原理不是本baseline教授的内容，请自行学习《计算机网络》这门课。本baseline仅教授如何使用。
 
@@ -64,7 +64,7 @@ cd Go1_bot
 python SoundServer.py
 ```
 
-服务端写好了，我们还需要再NX上写一个客户端程序`SoundClient.py`，如下：
+服务端写好了，我们还需要再Nano2上写一个客户端程序`SoundClient.py`，如下：
 
 ```py
 import time
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
 一个十分简易的客户端也写好了，是不是非常简单！
 
-在NX板卡上运行该程序：
+在Nano2板卡上运行该程序：
 
 ```sh
 cd Go1_Bot

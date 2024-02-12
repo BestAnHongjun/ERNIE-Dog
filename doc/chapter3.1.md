@@ -1,6 +1,6 @@
 # 3.1 如何让狗子的灯带发光
 
-阅读本教程之前请先阅读[官方教程](https://www.yuque.com/ironfatty/nly1un/cmls8h)，了解相关基础知识。
+阅读本教程之前请先阅读[官方教程-Go1头部LED灯条的开发使用](https://www.yuque.com/ironfatty/nly1un/cmls8h)，了解相关基础知识。
 
 Go1头部灯带的官方开发SDK位于狗子Nano1板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/FaceLightSDK`目录下，主要对`main.cpp`做了相关修改。
 
