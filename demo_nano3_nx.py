@@ -56,6 +56,9 @@ if __name__ == "__main__":
             for text, score in rec_res:
                 res_str += text
             res_str = res_str.replace(":", "；")
+            if res_str[-1] != "。":
+                res_str += "。"
+            res_str = res_str.strip()
             inp = input("---\nOCR结果：{}\n输入y,将该结果发送给文心一言;\n输入n,跳过该结果;\n输入其他内容,退出程序。\n[INPUT]>>> ".format(res_str))
             if inp == "n":
                 continue 
