@@ -2,7 +2,7 @@
 
 阅读本教程之前请先阅读[官方教程-Go1双目鱼眼相机的开发使用](https://www.yuque.com/ironfatty/nly1un/rguxgz)，了解相关基础知识。
 
-Go1头部灯带的官方开发SDK位于狗子Nano1-3板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/CameraSDK`目录下，主要对`CMakeLists.txt`做了相关修改，并添加了`ERNIE_Dog_nano1.cpp`。
+Go1鱼眼相机的官方开发SDK位于狗子Nano1-3板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/CameraSDK`目录下，主要对`CMakeLists.txt`做了相关修改，并添加了`ERNIE_Dog_nano1.cpp`。
 
 咱们的`DEMO`基本参考官方的[example_getRectFrame.cc](../Go1_Bot/CameraSDK/examples/example_getRectFrame.cc)编写，获取畸变矫正后的图像。
 
