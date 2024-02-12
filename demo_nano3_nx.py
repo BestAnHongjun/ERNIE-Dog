@@ -55,7 +55,7 @@ if __name__ == "__main__":
             res_str = ""
             for text, score in rec_res:
                 res_str += text
-            res_str = res_str.replace(":", "；")
+            res_str = res_str.replace("：", "；")
             if res_str[-1] != "。":
                 res_str += "。"
             res_str = res_str.strip()
