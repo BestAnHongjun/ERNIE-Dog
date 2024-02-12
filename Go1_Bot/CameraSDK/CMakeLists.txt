@@ -30,5 +30,17 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(SDKLIBS unitree_camera tstc_V4L2_xu_camera udev systemlog ${OpenCV_LIBS})
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
+# add_subdirectory(${PROJECT_SOURCE_DIR}/examples)
 
+
+# 以上是官方SDK内容
+# 以下是ERNIE-Dog项目添加的部分
+
+find_package(JPEG REQUIRED)
+include_directories(${JPEG_INCLUDE_DIR})
+
+include_directories(/home/unitree/PicSocket/install/include)
+link_directories(/home/unitree/PicSocket/install/lib)
+
+add_executable(ERNIE_Dog_nano1 ERNIE_Dog_nano1.cpp)
+target_link_libraries(ERNIE_Dog_nano1 ${SDKLIBS} picsocket ${JPEG_LIBRARIES})

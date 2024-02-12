@@ -36,7 +36,54 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 </details>
 
 <details>
-<summary>1.2 编译安装Unitree相关SDK(编写中)</summary>
+<summary>1.2 编译安装PicSocket图传</summary>
+
+下载PicSocket代码仓库。
+
+```sh
+# 下载PicSocket到home目录
+cd ~
+
+# 克隆Git仓库
+git clone https://github.com/BestAnHongjun/PicSocket.git
+
+# 如遇到网络问题，可由Gitee码云平台下载
+# git clone https://gitee.com/an_hongjun/PicSocket.git
+```
+
+切换到v0.0.1分支。
+```sh
+cd ~/PicSocket
+git checkout v0.0.1
+```
+
+编译并安装。
+```sh
+cd ~/PicSocket
+mkdir build
+cd build
+cmake ..
+make -j4 
+make install
+```
+
+执行完上述命令后，会将PicSocket相关组件安装到`~/PicSocket/install`文件夹。
+
+</details>
+
+<details>
+<summary>1.3 编译安装Unitree相关SDK</summary>
+
+编译安装宇树相机SDK
+
+```sh
+# 进入项目主目录
+cd ~/ERNIE-Dog
+
+# 执行一键编译安装脚本
+./Go1_Bot/build_camera_sdk.sh
+```
+
 </details>
 
 ### 2.Go1-Nano2环境配置
