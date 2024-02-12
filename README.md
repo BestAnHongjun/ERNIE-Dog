@@ -101,24 +101,29 @@ cd ~/ERNIE-Dog
 <details>
 <summary>2.1 在Go1-Nano2板卡上创建conda环境</summary>
 
-安装Miniconda。
-> **关于为什么要装`Miniconda`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-Nano2`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`Miniconda`。*PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*
+安装Miniforge。
+> **关于为什么要装`Miniforge`**：调用文心一言`ERNIE-Bot`时需要安装`erniebot`包，该包要求的最低Python解释器版本为`Python>=3.8`，而`Go1-Nano2`预装的Python解释器版本为3.6，同时为了避免后续过程的其他麻烦（比如环境依赖冲突），因此安装`conda`环境。 \
+> 说到`conda`环境，很多童鞋第一反应是和PC端一样安装`Anaconda`，但`Anaconda`过于庞大了，本身`Nano`空间就不太够。遂想到安装`Miniconda`。 \
+> 哈哈，很遗憾，笔者尝试过了，`Nano`上安装`Miniconda`会不兼容（报错：Illegal instruction），遂使用代替方案`Miniforge`。
+
+> *PS:有佬有其他solution可以用自己的方法，本`baseline`面向各水平广大群体。*\
+> *PS:虽然`Nano`上不能安装`Miniconda`，但笔者尝试过在`NX`上是可以安装`Miniconda`的。*
 
 ```sh
 # 创建文件夹
-mkdir -p ~/miniconda3
+mkdir -p ~/miniforge
 
-# 下载最新的Miniconda安装包
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O ~/miniconda3/miniconda.sh
+# 下载Miniforge安装包
+wget https://gitee.com/an_hongjun/miniforge/releases/download/v23.11.0/Miniforge3-Linux-aarch64.sh -O ~/miniforge/miniforge.sh
 
-# 安装Miniconda
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+# 安装Miniforge
+bash ~/miniforge/miniforge.sh -b -u -p ~/miniforge
 
 # 删除安装包
-rm -rf ~/miniconda3/miniconda.sh
+rm -rf ~/miniforge/miniforge.sh
 
-# 初始化Miniconda环境
-~/miniconda3/bin/conda init bash
+# 初始化Miniforge环境
+~/miniforge/bin/conda init bash
 source ~/.bashrc
 ```
 
