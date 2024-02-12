@@ -33,6 +33,14 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 # git clone https://gitee.com/an_hongjun/ERNIE-Dog.git
 ```
 
+> 如果在Go1板卡上遇到HTTPS证书相关问题问题，一般是由系统时间不准确导致的，执行如下指令自动同步系统时间：
+```sh
+sudo ntpdate ntp.aliyun.com
+```
+**记得每次开机都执行上述命令同步时间**。当你遇到不限于以下问题时，都有可能是时间问题导致的：
+* 通过wget、git、curl等下载文件失败，通常涉及https协议握手；
+* CMake编译失败。表现为命令行中好像已经编译完成了，但实际上没有更新二进制文件。因为CMake会比较缓存中的二进制文件和新生成的二进制文件的时间，如果编译目录中存在一个“未来“的文件，它会认为你已经编译成功了。
+
 </details>
 
 <details>
@@ -102,17 +110,7 @@ mkdir -p ~/miniconda3
 
 # 下载最新的Miniconda安装包
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O ~/miniconda3/miniconda.sh
-```
 
-> 如果在Go1板卡上遇到HTTPS证书相关问题问题，一般是由系统时间不准确导致的，执行如下指令自动同步系统时间：
-```sh
-sudo ntpdate ntp.aliyun.com
-```
-**记得每次开机都执行上述命令同步时间**。当你遇到不限于以下问题时，都有可能是时间问题导致的：
-* 通过wget、git、curl等下载文件失败，通常涉及https协议握手；
-* CMake编译失败。表现为命令行中好像已经编译完成了，但实际上没有更新二进制文件。因为CMake会比较缓存中的二进制文件和新生成的二进制文件的时间，如果编译目录中存在一个“未来“的文件，它会认为你已经编译成功了。
-
-```sh
 # 安装Miniconda
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 
