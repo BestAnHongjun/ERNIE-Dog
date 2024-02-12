@@ -180,7 +180,7 @@ git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
 cd ERNIE-Dog
 
 # 安装依赖项
-python -m pip install -r requirements-nx.txt
+python -m pip install -r requirements-nano2.txt
 ```
 
 </details>
