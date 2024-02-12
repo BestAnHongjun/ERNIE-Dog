@@ -381,10 +381,91 @@ pip3 install -e .
 
 <details>
 <summary>1.启动Go1-Nano1板卡程序(编写中)</summary>
+
+由终端连接Go1-Nano1；
+
+```sh
+ssh unitree@192.168.123.13
+```
+
+进入项目目录。
+
+```sh
+cd ~/ERNIE-Dog
+```
+
+运行扬声器服务程序。
+
+```sh
+python3 Go1_Bot/SoundServer.py
+```
+
+此终端保留，新开一个终端，连接Go1-Nano1。
+
+```sh
+ssh unitree@192.168.123.13
+```
+
+进入项目目录。
+
+```sh
+cd ~/ERNIE-Dog
+```
+
+运行摄像头推流程序。
+
+```sh
+./Go1_Bot/CameraSDK/bins/ERNIE_Dog_nano1
+```
+
+保留该终端。
+
 </details>
 
 <details>
-<summary>2.启动Go1-NX板卡程序(编写中)</summary>
+<summary>2.启动Go1-Nano2板卡程序</summary>
+
+新开一个终端，连接Go1-Nano2。
+
+```sh
+ssh unitree@192.168.123.14
+```
+
+进入项目目录。
+
+```sh
+cd ~/ERNIE-Dog
+```
+
+激活`conda`环境。
+
+```sh
+conda activate ernie_dog
+```
+
+同步时钟。
+
+```sh
+sudo ntpdate ntp.aliyun.com
+```
+
+将文心一言的token导入环境变量。
+
+```sh
+export ERNIE_BOT_TOKEN=<your-token>
+```
+
+运行ERNIE-Bot程序。
+
+```sh
+python3 demo_nano2.py
+```
+
+保留该终端。
+
+
+
+
 </details>
 
 ## 三、开发教程
