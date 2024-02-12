@@ -20,7 +20,7 @@ Baseline整体架构：
 ### 1.Go1-Nano1环境配置
 
 <details>
-<summary>1.1 下载代码仓库(编写中)</summary>
+<summary>1.1 下载代码仓库</summary>
 
 ```sh
 # 下载到home目录
@@ -83,6 +83,8 @@ cd ~/ERNIE-Dog
 # 执行一键编译安装脚本
 ./Go1_Bot/build_camera_sdk.sh
 ```
+
+**注意**：如果您按照上述教程，将`PicSocket`安装到了`~/PicSocket/install`文件夹，即`/home/unitree/PicSocket/install`文件夹，则不需要作任何修改。如果您未按照教程安装到该文件夹，请修改`ERNIE-Dog/Go1_Bot/CameraSDK/CMakeLists.txt`中的相关路径。
 
 </details>
 
