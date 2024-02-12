@@ -30,7 +30,7 @@ int main(){
     cam.setRectFrameSize(cv::Size(frameSize.width >> 2, frameSize.height >> 1)); ///< set camera rectify frame size
     cam.startCapture(); ///< disable image h264 encoding and share memory sharing
 
-    UDPImgSender img_sender("192.168.123.14", 8888);
+    UDPImgSender img_sender("192.168.123.15", 8888);
     
     usleep(500000);
     while(cam.isOpened()){
