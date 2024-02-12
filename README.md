@@ -372,8 +372,6 @@ cd ~/PicSocket
 pip3 install -e .
 ```
 
-执行完上述命令后，会将PicSocket相关组件安装到`~/PicSocket/install`文件夹。
-
 </details>
 
 
