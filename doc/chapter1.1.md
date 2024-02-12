@@ -183,4 +183,4 @@ make -j4
 
 执行该二进制文件，即可将图片流图送到`192.168.123.15:8888`。
 
-你可以在你自己的电脑上(最好是Linux)，仿照[PicSocket教程](https://gitee.com/an_hongjun/PicSocket)的快速开始部分在本地安装python模块，然后修改发送端的ip地址及端口指向你的电脑，然后在你的电脑上运行[picsocket_receiver.py](https://gitee.com/an_hongjun/PicSocket/blob/v0.0.1/example/python/picsocket_receiver.py)，就可以方便的查看狗子第一视角的图像了。
+你可以在你自己的电脑上(最好是Linux)，仿照[PicSocket教程](https://gitee.com/an_hongjun/PicSocket)的快速开始部分在本地安装python模块，然后修改发送端的ip地址及端口指向你的电脑，然后在你的电脑上运行[picsocket_receiver.py](https://gitee.com/an_hongjun/PicSocket/blob/v0.0.2/example/python/picsocket_receiver.py)，就可以方便的查看狗子第一视角的图像了。
