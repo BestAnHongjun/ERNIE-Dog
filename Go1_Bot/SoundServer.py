@@ -4,7 +4,7 @@ import socket
 
 def play():
     current_directory = os.path.dirname(os.path.abspath(__file__))
-    wav_path = os.path.join(self.current_directory, "cat.wav")
+    wav_path = os.path.join(current_directory, "cat.wav")
     os.system("aplay -D plughw:2,0 {}".format(wav_path))
 
 
