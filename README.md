@@ -21,6 +21,18 @@ Baseline整体架构：
 
 <details>
 <summary>1.1 下载代码仓库(编写中)</summary>
+
+```sh
+# 下载到home目录
+cd ~
+
+# 克隆Git仓库
+git clone https://github.com/BestAnHongjun/ERNIE-Dog.git
+
+# 如遇到网络问题，可由Gitee码云平台下载
+# git clone https://gitee.com/an_hongjun/ERNIE-Dog.git
+```
+
 </details>
 
 <details>
