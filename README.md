@@ -396,6 +396,16 @@ pip3 install -e .
 
 </details>
 
+<details>
+<summary>3.5 下载项目代码</summary>
+
+```sh
+cd ~/PaddleOCR
+wget https://gitee.com/an_hongjun/ERNIE-Dog/raw/master/demo_nano3_nx.py
+```
+
+</details>
+
 
 ## 二、运行DEMO
 
