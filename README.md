@@ -415,7 +415,7 @@ cd ~/ERNIE-Dog
 运行摄像头推流程序。
 
 ```sh
-./Go1_Bot/CameraSDK/bins/ERNIE_Dog_nano1
+./demo_nano1.sh
 ```
 
 保留该终端。
