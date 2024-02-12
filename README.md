@@ -380,7 +380,7 @@ pip3 install -e .
 ## 二、运行DEMO
 
 <details>
-<summary>1.启动Go1-Nano1板卡程序(编写中)</summary>
+<summary>1.启动Go1-Nano1板卡程序</summary>
 
 由终端连接Go1-Nano1；
 
@@ -463,8 +463,28 @@ python3 demo_nano2.py
 
 保留该终端。
 
+</details>
 
+<details>
+<summary>3.启动Go1-Nano3(Go1-NX)板卡程序</summary>
 
+新开一个终端，连接Go1-Nano3(Go1-NX)。
+
+```sh
+ssh unitree@192.168.123.15
+```
+
+进入PaddleOCR目录。
+
+```sh
+cd ~/PaddleOCR
+```
+
+运行PaddleOCR程序。
+
+```sh
+python3 demo_nano3_nx.py
+```
 
 </details>
 
