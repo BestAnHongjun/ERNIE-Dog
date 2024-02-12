@@ -59,10 +59,10 @@ git clone https://github.com/BestAnHongjun/PicSocket.git
 # git clone https://gitee.com/an_hongjun/PicSocket.git
 ```
 
-切换到v0.0.1分支。
+切换到v0.0.2分支。
 ```sh
 cd ~/PicSocket
-git checkout v0.0.1
+git checkout v0.0.2
 ```
 
 编译并安装。
@@ -217,7 +217,7 @@ cd ~/ERNIE-Dog
 
 下载PaddlePaddle-GPU安装包。
 
-**注意**：该Python包是针对JetPack4.5定制的，小白请勿在`conda`环境中使用。大佬自行使用骚操作解决。
+**注意**：该Python包是针对JetPack4.5定制的，小白请勿在`conda`环境中使用。大佬如果想在`conda`环境中使用请自行使用骚操作解决。
 
 ```sh
 # 进入下载目录
@@ -250,6 +250,19 @@ export OPENBLAS_CORETYPE=ARMV8
 ```sh
 source ~/.bashrc
 ```
+
+使用解释器方式运行python，看一下是否安装成功：
+
+```sh
+python3
+```
+
+```py
+import paddle
+```
+
+以下为安装成功的正常状态：
+![](./attach/paddle.jpg)
 
 </details>
 
@@ -317,6 +330,49 @@ python3 tools/infer/predict_system.py \
 ```
 
 运行结果将保存于`./inference_results`文件夹下。
+
+</details>
+
+<details>
+<summary>3.4 编译安装PicSocket图传(Python版)</summary>
+
+下载PicSocket代码仓库。
+
+```sh
+# 下载PicSocket到home目录
+cd ~
+
+# 克隆Git仓库
+git clone https://github.com/BestAnHongjun/PicSocket.git
+
+# 如遇到网络问题，可由Gitee码云平台下载
+# git clone https://gitee.com/an_hongjun/PicSocket.git
+```
+
+切换到v0.0.2分支。
+```sh
+cd ~/PicSocket
+git checkout v0.0.2
+```
+
+编译并安装。
+```sh
+cd ~/PicSocket
+mkdir build
+cd build
+cmake .. -DPYTHON_BUILD=TRUE # 注意这里和Nano1不一样！
+make -j4 
+# 注意这里也和Nano1不一样，不需要make install
+```
+
+安装Python模块。
+
+```sh
+cd ~/PicSocket
+pip3 install -e .
+```
+
+执行完上述命令后，会将PicSocket相关组件安装到`~/PicSocket/install`文件夹。
 
 </details>
 
