@@ -15,6 +15,8 @@ Baseline整体架构：
 <img src="./attach/framework.jpg" width="800px">
 </div>
 
+未完结，作者正在加急写文档……
+
 ## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
