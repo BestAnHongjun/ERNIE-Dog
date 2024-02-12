@@ -3,7 +3,9 @@ import socket
 
 
 def play():
-    os.system("aplay -D plughw:2,0 cat.wav")
+    current_directory = os.path.dirname(os.path.abspath(__file__))
+    wav_path = os.path.join(self.current_directory, "cat.wav")
+    os.system("aplay -D plughw:2,0 {}".format(wav_path))
 
 
 if __name__ == "__main__":
