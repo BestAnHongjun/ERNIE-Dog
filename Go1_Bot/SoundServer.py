@@ -9,7 +9,7 @@ def play():
 if __name__ == "__main__":
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.bind(("192.168.123.13", 8888))
-    print("UDP bound on port 8888...")
+    print("UDP bind on port 8888...")
 
     # 设置音量为50%
     os.system("amixer -c 2 set Speaker 18")
