@@ -26,7 +26,7 @@ int main(){
 }
 ```
 
-下面我们创建`UnitreeCamera`实例。如果你看过[官方DEMO](../Go1_Bot/CameraSDK/examples/example_getRectFrame.cc)的话，它在创建实例的时候，是通过读取[stereo_camera_config.yaml]这个配置文件来配置相关参数的。
+下面我们创建`UnitreeCamera`实例。如果你看过[官方DEMO](../Go1_Bot/CameraSDK/examples/example_getRectFrame.cc)的话，它在创建实例的时候，是通过读取[stereo_camera_config.yaml](../Go1_Bot/CameraSDK/stereo_camera_config.yaml)这个配置文件来配置相关参数的。
 
 **笔者表示，感觉好难用……**
 
