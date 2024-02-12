@@ -95,6 +95,7 @@ while(cam.isOpened()){
 * 目前还是beta版本，不过针对狗子平台已经调通了。佬们如果在其他平台部署遇到了问题，或者遇到了什么bug，欢迎提issue。
 
 GitHub地址：https://github.com/BestAnHongjun/PicSocket
+
 Gitee地址：https://gitee.com/an_hongjun/PicSocket
 
 佬，看在孩子被恶心了那么久还给大伙造轮子的份上就给个star吧。
