@@ -34,7 +34,6 @@ def send_to_nano2(text):
 
 if __name__ == "__main__":
     model = OCRModel()
-    img = cv2.imread("./doc/imgs/00207393.jpg")
 
     # 用于接收Nano1发来的图片流
     img_receiver = picsocket.ImgReceiver(8888)
@@ -69,6 +68,3 @@ if __name__ == "__main__":
                 break
         else:
             break
-
-    # res = model(img)
-    # print(res)
