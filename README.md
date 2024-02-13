@@ -9,6 +9,8 @@
 > GitHub仓库地址：https://github.com/BestAnHongjun/ERNIE-Dog \
 > Gitee仓库地址：https://gitee.com/an_hongjun/ERNIE-Dog
 
+DEMO演示视频：[Bilibili](https://www.bilibili.com/video/BV1dp421R7Bj/)
+
 Baseline整体架构：
 
 <div align="center">
