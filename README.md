@@ -15,8 +15,6 @@ Baseline整体架构：
 <img src="./attach/framework.jpg" width="800px">
 </div>
 
-未完结，作者正在加急写文档……
-
 ## 一、DEMO运行准备
 
 ### 1.Go1-Nano1环境配置
@@ -543,12 +541,6 @@ python3 demo_nano3_nx.py
 [3.2 如何调用狗子的扬声器](./doc/chapter3.2.md)
 
 [3.3 控制狗子运动](./doc/chapter3.3.md)
-
-### 4.工程集成
-
-[4.1 文心大模型与UnitreeSDK集成(编写中)](#)
-
-[4.2 PaddleOCR-文心-UnitreeSDK全链路集成(编写中)](#)
 
 ## 开发单位
 #### 开发者：

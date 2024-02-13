@@ -2,9 +2,9 @@
 
 阅读本教程之前请先阅读[官方教程-Go1双目鱼眼相机的开发使用](https://www.yuque.com/ironfatty/nly1un/rguxgz)，了解相关基础知识。
 
-Go1鱼眼相机的官方开发SDK位于狗子Nano1-3板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/CameraSDK`目录下，主要对`CMakeLists.txt`做了相关修改，并添加了`ERNIE_Dog_nano1.cpp`。
+Go1鱼眼相机的官方开发SDK位于狗子Nano1、Nano2、Nano3(NX)板卡的`~/Unitree/SDK`目录下，本Baseline对其进行整理后放在了`Go1_Bot/CameraSDK`目录下，主要对`CMakeLists.txt`做了相关修改，并添加了`ERNIE_Dog_nano1.cpp`。
 
-咱们的`DEMO`基本参考官方的[example_getRectFrame.cc](../Go1_Bot/CameraSDK/examples/example_getRectFrame.cc)编写，获取畸变矫正后的图像。
+本`DEMO`基本参考官方的[example_getRectFrame.cc](../Go1_Bot/CameraSDK/examples/example_getRectFrame.cc)编写，获取畸变矫正后的图像。
 
 首先引入头文件。
 
@@ -79,12 +79,12 @@ while(cam.isOpened()){
 **But！！！问题来了！！！**
 
 * 宇树官方的`CameraSDK`只提供了`C++`版本；
-* 咱们的下游任务要用`PaddleOCR`做，只提供了`Python`版本；
-* 前部摄像头连接在`Nano1`上，因此必须在`Nano1`上运行`SDK`读摄像头。但是`PaddleOCR`为了推理实时性，要部署在`NX`上，不在同一个设备。
+* 咱们的下游任务要用`PaddleOCR`做，官方只提供了`Python`版本；
+* 前部摄像头连接在`Nano1`上，因此必须在`Nano1`上运行`SDK`读摄像头。但是Go1将`Nano3(NX)`作为主要AI计算卡，因此习惯上会把`PaddleOCR`部署在`Nano3(NX)`上。图像采集程序和图像处理程序不在同一个设备。
 
 也就是说，咱们需要一个**跨语言**的、**跨平台**的局域网图传。
 
-恶心不？哈哈，孩子还是参赛选手的时候被这问题恶心了可不止一年。
+抽象不？哈哈，孩子还是参赛选手的时候被这问题**了可不止一年。
 
 笔者本来打算在这个Baseline教程里面讲这图传该咋写的……emmm但是涉及的内容又有些偏离主题，好像又有些超纲。
 
@@ -92,13 +92,13 @@ while(cam.isOpened()){
 
 * 支持**跨语言**，封装了C/C++和Python的接口；
 * 支持**跨平台**，windows/Linux/MacOS/Jetson/树莓派/香橙派……
+* **高性能**，实测100Mbps内网带宽下1080P画质100+FPS；
 * 目前还是beta版本，不过针对狗子平台已经调通了。佬们如果在其他平台部署遇到了问题，或者遇到了什么bug，欢迎提issue。
 
-GitHub地址：https://github.com/BestAnHongjun/PicSocket
+> GitHub地址：https://github.com/BestAnHongjun/PicSocket \
+> Gitee地址：https://gitee.com/an_hongjun/PicSocket
 
-Gitee地址：https://gitee.com/an_hongjun/PicSocket
-
-佬，看在孩子被恶心了那么久还给大伙造轮子的份上就给个star吧。
+佬赏个star呗~
 
 具体的使用教程可以参考[项目主页](https://gitee.com/an_hongjun/PicSocket)。下面咱们把`PicSocket`加入到咱们的代码中。
 
